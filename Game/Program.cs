@@ -10,7 +10,7 @@ namespace Game
     {
         static void Main(string[] args)
         {
-            Game G1 = new Game("Monopoly", 19.99m, new DateTime(1970, 01, 31));
+            ComputerGame G1 = new ComputerGame("Monopoly", 19.99m, new DateTime(1970, 01, 31), "18, violence, gambling");
             //Game G2 = new Game() { price = 10.99m, releaseDate = new DateTime(2000, 6, 15) };
 
             ComputerGame CG1 = new ComputerGame("Pokemon", 59.99m, new DateTime(2018, 11, 16), "12, sex, violence, fear");

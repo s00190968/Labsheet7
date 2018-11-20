@@ -20,12 +20,12 @@ namespace Game
         }
         public override void updatePrice(decimal percentageIncrease)
         {
+            price *= (1 + percentageIncrease);
             Console.WriteLine("Updating price from ComputerGame class");
-            base.updatePrice(percentageIncrease);
         }
         public override string ToString()
         {
-            return base.ToString() + "\n" + PEGI;
+            return base.ToString() + "\nRating: " + PEGI;
         }
     }
 }

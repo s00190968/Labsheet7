@@ -6,9 +6,16 @@ using System.Threading.Tasks;
 
 namespace Game
 {
-    class Game
+    public abstract class Game
     {
-        string name { get; set; }
+        private readonly string name;
+        string Name
+        {
+            get
+            {
+                return name;
+            }
+        }
         protected decimal price { get; set; }
         public DateTime releaseDate { get; set; }
 
@@ -18,22 +25,21 @@ namespace Game
             this.price = price;
             this.releaseDate = releaseDate;
         }
-        public Game(string name, decimal price) : this(name, price, DateTime.Now) { 
-}
+        public Game(string name, decimal price) : this(name, price, DateTime.Now)
+        {
+
+        }
         public Game() : this("", 0)
         {
 
         }
 
-        public virtual void updatePrice(decimal percentageIncrease)
-        {
-            price *= (1 + percentageIncrease);
-        }
+        public abstract void updatePrice(decimal percentageIncrease);
 
 
         public override string ToString()
         {
-            return name + "\n" + price + "\n" + releaseDate.ToShortDateString();
+            return "Name: " + name + "\nPrice: " + price + "\nRelease date: " + releaseDate.ToShortDateString();
         }
 
         public void setPrice(decimal price)
